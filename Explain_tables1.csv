@@ -1,0 +1,2 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,b_sale_basket,NULL,ALL,NULL,NULL,NULL,NULL,343829,100.00,NULL
