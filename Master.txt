@@ -1,0 +1,26 @@
+mysql> SHOW MASTER STATUS;
++------------------+----------+--------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+--------------+------------------+-------------------+
+| mysql-bin.000003 |      891 | skytech      |                  |                   |
++------------------+----------+--------------+------------------+-------------------+
+1 row in set (0.00 sec)
+ Connecting to master | 10.0.2.6    | slave_user  |        3306 |            60                         
+| mysql-bin.000003 |                 891 | localhost-relay-bin.000001 |  
+   4 | mysql-bin.000003      | Connecting       | Yes               |          
+
+mysql> select id from b_sale_basket LIMIT 1;
++-----+
+| id  |
++-----+
+| 143 |
++-----+
+1 row in set (0.02 sec)
+
+mysql>
+    datadir=/var/lib/mysql
+ socket=/var/lib/mysql/mysql.sock                                                                                                                                                                                                          log-error=/var/log/mysqld.log                                                                                        pid-file=/var/run/mysqld/mysqld.pid                                                                                  # укажем ID сервера — произвольное, но уникальное число                                                              server-id = 1
+ # укажем путь к бинарному логу — там будут храниться операции
+ log_bin = mysql-bin.log  
+ # название вашей базы данных, которая будет реплицироваться 
+ binlog_do_db = skytech    

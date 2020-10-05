@@ -1,0 +1,10 @@
+
+[mysqld_safe]
+log-error=/var/log/mariadb/mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid
+# укажем ID сервера — произвольное, но уникальное число
+server-id = 2
+# укажем путь к бинарному логу — там будут храниться операции
+log_bin = mysql-bin.log
+# название вашей базы данных, которая будет реплицироваться
+binlog_do_db = skytech
